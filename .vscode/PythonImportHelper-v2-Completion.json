@@ -1,11 +1,117 @@
 [
     {
+        "label": "EnergyManagementEnv",
+        "importPath": "env.energy_management",
+        "description": "env.energy_management",
+        "isExtraImport": true,
+        "detail": "env.energy_management",
+        "documentation": {}
+    },
+    {
         "label": "numpy",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "numpy",
         "description": "numpy",
         "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "run_rl",
+        "importPath": "methods.reinforcement_learning",
+        "description": "methods.reinforcement_learning",
+        "isExtraImport": true,
+        "detail": "methods.reinforcement_learning",
+        "documentation": {}
+    },
+    {
+        "label": "run_sa",
+        "importPath": "methods.simulated_annealing",
+        "description": "methods.simulated_annealing",
+        "isExtraImport": true,
+        "detail": "methods.simulated_annealing",
+        "documentation": {}
+    },
+    {
+        "label": "run_optimization",
+        "importPath": "methods.optimization",
+        "description": "methods.optimization",
+        "isExtraImport": true,
+        "detail": "methods.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "plot_results",
+        "importPath": "utils.plot_results",
+        "description": "utils.plot_results",
+        "isExtraImport": true,
+        "detail": "utils.plot_results",
+        "documentation": {}
+    },
+    {
+        "label": "tabulate_results",
+        "importPath": "utils.tabulate_results",
+        "description": "utils.tabulate_results",
+        "isExtraImport": true,
+        "detail": "utils.tabulate_results",
+        "documentation": {}
+    },
+    {
+        "label": "gym",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gym",
+        "description": "gym",
+        "detail": "gym",
+        "documentation": {}
+    },
+    {
+        "label": "spaces",
+        "importPath": "gym",
+        "description": "gym",
+        "isExtraImport": true,
+        "detail": "gym",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "Location",
+        "importPath": "pvlib.location",
+        "description": "pvlib.location",
+        "isExtraImport": true,
+        "detail": "pvlib.location",
+        "documentation": {}
+    },
+    {
+        "label": "PVSystem",
+        "importPath": "pvlib.pvsystem",
+        "description": "pvlib.pvsystem",
+        "isExtraImport": true,
+        "detail": "pvlib.pvsystem",
+        "documentation": {}
+    },
+    {
+        "label": "ModelChain",
+        "importPath": "pvlib.modelchain",
+        "description": "pvlib.modelchain",
+        "isExtraImport": true,
+        "detail": "pvlib.modelchain",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPERATURE_MODEL_PARAMETERS",
+        "importPath": "pvlib.temperature",
+        "description": "pvlib.temperature",
+        "isExtraImport": true,
+        "detail": "pvlib.temperature",
         "documentation": {}
     },
     {
@@ -36,6 +142,94 @@
         "documentation": {}
     },
     {
+        "label": "EnergyManagementEnv",
+        "importPath": "Final.env.energy_management",
+        "description": "Final.env.energy_management",
+        "isExtraImport": true,
+        "detail": "Final.env.energy_management",
+        "documentation": {}
+    },
+    {
+        "label": "Normal",
+        "importPath": "torch.distributions",
+        "description": "torch.distributions",
+        "isExtraImport": true,
+        "detail": "torch.distributions",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn.functional",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn.functional",
+        "description": "torch.nn.functional",
+        "detail": "torch.nn.functional",
+        "documentation": {}
+    },
+    {
+        "label": "generate_rates",
+        "kind": 2,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "def generate_rates(num_intervals):\n    base_rate = 0.10\n    peak_rate = 0.20\n    utility_rates = np.random.uniform(base_rate, peak_rate, num_intervals)\n    for i in range(num_intervals):\n        hour = (i // (num_intervals // 24)) % 24\n        if 8 <= hour <= 20:\n            utility_rates[i] *= 1.5\n    prior_purchased_rates = np.random.uniform(0.08, 0.12, num_intervals)  # More stable rates\n    return utility_rates, prior_purchased_rates",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "utility_rates,prior_rates",
+        "kind": 5,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "utility_rates,prior_rates = generate_rates(480)\nenv = EnergyManagementEnv(latitude=80, longitude=72, utility_prices=utility_rates, prior_purchase=prior_rates)\nrl_results = run_rl(env)\n#sa_results = run_sa(env)\n#opt_results = run_optimization(env)\n#plot_results(rl_results, sa_results, opt_results)\n#tabulate_results(rl_results, sa_results, opt_results)",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "env",
+        "kind": 5,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "env = EnergyManagementEnv(latitude=80, longitude=72, utility_prices=utility_rates, prior_purchase=prior_rates)\nrl_results = run_rl(env)\n#sa_results = run_sa(env)\n#opt_results = run_optimization(env)\n#plot_results(rl_results, sa_results, opt_results)\n#tabulate_results(rl_results, sa_results, opt_results)",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "rl_results",
+        "kind": 5,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "rl_results = run_rl(env)\n#sa_results = run_sa(env)\n#opt_results = run_optimization(env)\n#plot_results(rl_results, sa_results, opt_results)\n#tabulate_results(rl_results, sa_results, opt_results)",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "#sa_results",
+        "kind": 5,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "#sa_results = run_sa(env)\n#opt_results = run_optimization(env)\n#plot_results(rl_results, sa_results, opt_results)\n#tabulate_results(rl_results, sa_results, opt_results)",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "#opt_results",
+        "kind": 5,
+        "importPath": "blessai",
+        "description": "blessai",
+        "peekOfCode": "#opt_results = run_optimization(env)\n#plot_results(rl_results, sa_results, opt_results)\n#tabulate_results(rl_results, sa_results, opt_results)",
+        "detail": "blessai",
+        "documentation": {}
+    },
+    {
+        "label": "EnergyManagementEnv",
+        "kind": 6,
+        "importPath": "energy_management",
+        "description": "energy_management",
+        "peekOfCode": "class EnergyManagementEnv(gym.Env):\n    def __init__(self, latitude, longitude, utility_prices, prior_purchased, num_time_intervals=480):\n        super().__init__()\n        self.num_time_intervals = num_time_intervals\n        self.utility_prices = utility_prices\n        self.prior_purchased = prior_purchased\n        self.latitude = latitude\n        self.longitude = longitude\n        # Initialize location and solar power system\n        self.location = Location(latitude, longitude)",
+        "detail": "energy_management",
+        "documentation": {}
+    },
+    {
         "label": "Actor",
         "kind": 6,
         "importPath": "maddpg",
@@ -60,6 +254,42 @@
         "description": "maddpg",
         "peekOfCode": "class MADDPG:\n    def __init__(\n        self,\n        n_agents,\n        state_size,\n        action_size,\n        hidden_size=256,\n        gamma=0.99,\n        tau=0.01,\n        lr_actor=1e-4,",
         "detail": "maddpg",
+        "documentation": {}
+    },
+    {
+        "label": "Actor",
+        "kind": 6,
+        "importPath": "reinforcement_learning",
+        "description": "reinforcement_learning",
+        "peekOfCode": "class Actor(nn.Module):\n    def __init__(self, state_dim, action_dim):\n        super(Actor, self).__init__()\n        self.network = nn.Sequential(\n            nn.Linear(state_dim, 64),\n            nn.ReLU(),\n            nn.Linear(64, 64),\n            nn.ReLU()\n        )\n        self.mu = nn.Linear(64, action_dim)",
+        "detail": "reinforcement_learning",
+        "documentation": {}
+    },
+    {
+        "label": "Critic",
+        "kind": 6,
+        "importPath": "reinforcement_learning",
+        "description": "reinforcement_learning",
+        "peekOfCode": "class Critic(nn.Module):\n    def __init__(self, state_dim):\n        super(Critic, self).__init__()\n        self.network = nn.Sequential(\n            nn.Linear(state_dim, 64),\n            nn.ReLU(),\n            nn.Linear(64, 64),\n            nn.ReLU(),\n            nn.Linear(64, 1)\n        )",
+        "detail": "reinforcement_learning",
+        "documentation": {}
+    },
+    {
+        "label": "PPO",
+        "kind": 6,
+        "importPath": "reinforcement_learning",
+        "description": "reinforcement_learning",
+        "peekOfCode": "class PPO:\n    def __init__(self, state_dim, action_dim, lr_actor, lr_critic, gamma, K_epochs, eps_clip):\n        self.gamma = gamma\n        self.eps_clip = eps_clip\n        self.K_epochs = K_epochs\n        self.actor = Actor(state_dim, action_dim)\n        self.critic = Critic(state_dim)\n        self.optimizer_actor = optim.Adam(self.actor.parameters(), lr=lr_actor)\n        self.optimizer_critic = optim.Adam(self.critic.parameters(), lr=lr_critic)\n        self.policy_old = Actor(state_dim, action_dim)",
+        "detail": "reinforcement_learning",
+        "documentation": {}
+    },
+    {
+        "label": "run_rl",
+        "kind": 2,
+        "importPath": "reinforcement_learning",
+        "description": "reinforcement_learning",
+        "peekOfCode": "def run_rl(env_settings):\n    env = EnergyManagementEnv(**env_settings)\n    state_dim = env.observation_space.shape[0]\n    action_dim = env.action_space.shape[0]\n    ppo_agent = PPO(state_dim, action_dim, lr_actor=0.003, lr_critic=0.01, gamma=0.99, K_epochs=10, eps_clip=0.2)\n    max_episodes = 500\n    for episode in range(max_episodes):\n        state = env.reset()\n        if state is None:\n            raise ValueError(\"Environment reset method returned None, which is invalid.\")",
+        "detail": "reinforcement_learning",
         "documentation": {}
     }
 ]
